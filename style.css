@@ -1,0 +1,177 @@
+/* Core Styling Rules & Variable Systems */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #090d16;
+    color: #f1f5f9;
+    padding: 20px;
+}
+
+/* Master Layout Frame */
+.typing-master-wrapper {
+    width: 100%;
+    max-width: 800px;
+    background: #111827;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.app-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.app-header h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.app-header p {
+    color: #94a3b8;
+    font-size: 1rem;
+}
+
+/* Dashboard Scoreboard Elements */
+.metrics-panel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.metric-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.metric-label {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #64748b;
+    margin-bottom: 6px;
+}
+
+.metric-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #e2e8f0;
+}
+
+.text-accent {
+    color: #6366f1;
+}
+
+/* Typing Screen Area & Letter Classes */
+.typing-arena {
+    background: #1e293b;
+    border-radius: 16px;
+    padding: 24px;
+    font-size: 1.35rem;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    word-break: break-word;
+    min-height: 160px;
+    user-select: none;
+    margin-bottom: 24px;
+}
+
+/* Character Highlighting Matrices */
+.char-unit {
+    color: #64748b;
+    position: relative;
+    transition: color 0.1s ease;
+}
+
+.char-unit.correct {
+    color: #10b981; /* Premium Emerald Emerald Green */
+}
+
+.char-unit.incorrect {
+    color: #ef4444; /* High-Visibility Ruby Crimson Red */
+    background: rgba(239, 68, 68, 0.15);
+    border-radius: 4px;
+}
+
+/* Dynamic Active Typing Blinking Cursor */
+.char-unit.active {
+    color: #ffffff;
+    border-bottom: 2px solid #6366f1;
+}
+
+/* Execution Controllers & Utility Hide Inputs */
+.control-actions {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+#hidden-keyboard-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.btn-action {
+    padding: 14px 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.reset-btn {
+    background: #334155;
+    color: #f8fafc;
+}
+
+.reset-btn:hover {
+    background: #475569;
+    transform: translateY(-1px);
+}
+
+/* Responsive UI Breakpoints via Media Queries */
+@media (max-width: 640px) {
+    .typing-master-wrapper {
+        padding: 20px;
+    }
+    
+    .app-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .metrics-panel {
+        gap: 10px;
+    }
+
+    .metric-value {
+        font-size: 1.4rem;
+    }
+
+    .typing-arena {
+        font-size: 1.15rem;
+        padding: 16px;
+        min-height: 140px;
+    }
+}

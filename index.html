@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typing Master - Elevate Your Speed</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="typing-master-wrapper">
+      <header class="app-header">
+        <h1>⌨️ Typing Master</h1>
+        <p>Test and accelerate your words-per-minute accuracy in real-time.</p>
+      </header>
+
+      <div class="metrics-panel">
+        <div class="metric-box">
+          <span class="metric-label">Time Left</span>
+          <span class="metric-value" id="timer">60s</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-label">WPM</span>
+          <span class="metric-value text-accent" id="wpm">0</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-label">Accuracy</span>
+          <span class="metric-value" id="accuracy">100%</span>
+        </div>
+      </div>
+
+      <div class="typing-arena" id="text-display-box">
+        <span class="loading-text">Loading practice matrix...</span>
+      </div>
+
+      <div class="control-actions">
+        <input
+          type="text"
+          id="hidden-keyboard-input"
+          autofocus
+          autocomplete="off"
+          capitalize="none"
+        />
+        <button class="btn-action reset-btn" id="reset-action-btn">
+          Restart Test
+        </button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
